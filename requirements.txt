@@ -1,2 +1,3 @@
 # This single dot is required by Posit Connect to deploy the app
-.
+loguru
+# rich

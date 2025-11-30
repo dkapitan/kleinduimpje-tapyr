@@ -1,8 +1,8 @@
 [project]
-name = "tapyr_template"
+name = "kleinduimpje"
 version = "0.2.0"
 description = ""
-authors = [{name = "Appsilon.com", email = "hello@appsilon.com"}]
+authors = [{name = "Daniel Kapitan", email = "daniel@kapitan.net"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -15,10 +15,10 @@ dependencies = [
 
 
 [tool.coverage.run]
-source = ["tapyr_template"]
+source = ["kleinduimpje"]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "icecream>=2.1.3",
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.5",
@@ -31,6 +31,7 @@ dev-dependencies = [
     "pytest-watch>=4.2.0",
     "ruff>=0.6.9",
     "rsconnect-python>=1.24.0",
+    "shinylive>=0.8.4",
 ]
 
 

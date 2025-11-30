@@ -14,3 +14,6 @@ test-results/
 
 # Files packages installed with npm (if you use it)
 node_modules
+
+# Shinylive
+site/
