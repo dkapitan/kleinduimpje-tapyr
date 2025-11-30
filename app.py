@@ -4,7 +4,6 @@ from pathlib import Path
 from loguru import logger
 from shiny import App, ui
 
-
 from kleinduimpje.view.root import get_dashboard_ui, server
 
 LOG_LEVEL = "INFO"

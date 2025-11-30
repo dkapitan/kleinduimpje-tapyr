@@ -6,13 +6,19 @@ authors = [{name = "Daniel Kapitan", email = "daniel@kapitan.net"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "fsspec>=2025.10.0",
     "loguru>=0.7.2",
+    "marimo>=0.18.1",
     "pydantic-settings>=2.5.2",
     "python-dotenv>=1.0.1",
     "rich>=13.8.1",
     "shiny>=1.1.0",
+    "shinyswatch>=0.7.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/dkapitan/kleinduimpje-tapyr"
+Homepage = "https://kapitan.net/kleinduimpje-tapyr"
 
 [tool.coverage.run]
 source = ["kleinduimpje"]
@@ -32,6 +38,7 @@ dev = [
     "ruff>=0.6.9",
     "rsconnect-python>=1.24.0",
     "shinylive>=0.8.4",
+    "marimo>=0.18.1",
 ]
 
 
@@ -45,3 +52,9 @@ filterwarnings = [
     # This warning is caused by the `jupyter_client` package and is not relevant to us
     "ignore:Jupyter is migrating its paths to use standard platformdirs.*:DeprecationWarning:jupyter_client.connect"
 ]
+
+[tool.kleinduimpje]
+# Optional: Override repository configuration
+# github_repo = "username/repo"
+github_branch = "main"
+gpx_folder = "data"

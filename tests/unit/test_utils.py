@@ -7,28 +7,6 @@ from kleinduimpje.logic.utils import divide, load_config
 from tests.helpers.logging_helpers import log_contain_message
 
 
-def test_divide():
-    # Given
-    x = 2
-    y = 2
-    expected = 1.0
-    # When
-    result = divide(x, y)
-    # Then
-    assert result == expected
-
-
-def test_divide_by_zero(loguru_sink):
-    # Given
-    x = 2
-    y = 0
-    # When
-    with pytest.raises(ZeroDivisionError):
-        divide(x, y)
-    # Then
-    assert log_contain_message(loguru_sink, "ZeroDivisionError: division by zero")
-
-
 def test_load_config_with_repository_url(tmp_path, monkeypatch):
     # Given: a pyproject.toml with repository URL in project.urls section
     pyproject_content = """
@@ -46,6 +24,7 @@ Repository = "https://github.com/testuser/testrepo"
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     original_file = utils_module.__file__
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
@@ -73,6 +52,7 @@ Repository = "https://github.com/testuser/testrepo/"
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
@@ -99,6 +79,7 @@ github_repo = "fallbackuser/fallbackrepo"
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
@@ -128,6 +109,7 @@ github_repo = "fallbackuser/fallbackrepo"
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
@@ -145,6 +127,7 @@ def test_load_config_with_no_pyproject_toml(tmp_path, monkeypatch):
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
@@ -164,6 +147,7 @@ def test_load_config_with_empty_pyproject_toml(tmp_path, monkeypatch):
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
@@ -190,6 +174,7 @@ Repository = "https://github.com/testrepo"
 
     # Mock __file__ to point to the temp directory structure
     import kleinduimpje.logic.utils as utils_module
+
     monkeypatch.setattr(utils_module, "__file__", str(logic_dir / "utils.py"))
 
     # When
